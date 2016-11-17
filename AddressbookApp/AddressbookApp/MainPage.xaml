@@ -4,8 +4,27 @@
              xmlns:local="clr-namespace:AddressbookApp"
              x:Class="AddressbookApp.MainPage">
 
-  <Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
-
+  <ListView x:Name="AddressBookListView" VerticalOptions="FillAndExpand">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <Grid Padding="5, 5" RowSpacing="0">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*" />
+              <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Text="{Binding Name}"
+                   VerticalTextAlignment="Start"
+                   Grid.Row="0" Grid.Column="0" />
+            <Label Text="{Binding PhoneNumber}"
+                   VerticalTextAlignment="End"
+                   Grid.Row="1" Grid.Column="0" />
+          </Grid>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
 </ContentPage>

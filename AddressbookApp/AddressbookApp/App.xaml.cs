@@ -13,7 +13,7 @@ namespace AddressbookApp
         {
             InitializeComponent();
 
-            MainPage = new AddressbookApp.MainPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
